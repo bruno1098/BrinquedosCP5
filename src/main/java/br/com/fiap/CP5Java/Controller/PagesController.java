@@ -8,12 +8,12 @@ public class PagesController {
 
     @GetMapping("/req/login")
     public String login(){
-        return "login";
+        return "Login";
     }
 
     @GetMapping("/req/cadastro")
     public String cadastro(){
-        return "cadastro";
+        return "Cadastro";
     }
 
     @GetMapping("/index")
