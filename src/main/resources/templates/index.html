@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+
+<h1>Seja Bem-Vindo!</h1>
+<h2>Consulte nossos brinquedos</h2>
+
+<div class="buttons-container">
+
+
+    <a href="/brinquedos" class="btn-brinquedos">Ver Brinquedos</a>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn-logout">Logout</button>
+    </form>
+
+</div>
+
+</body>
+</html>

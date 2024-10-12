@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Brinquedo</title>
+  <link rel="stylesheet" th:href="@{/css/editar.css}">
+</head>
+<body>
+
+<section class="toy-register-section">
+  <h1 class="form-title">Editar Brinquedo</h1>
+  <form th:action="@{/brinquedos/editar}" th:object="${brinquedo}" method="post">
+    <input type="hidden" th:field="*{id}" name="id">
+
+    <div class="input-box">
+      <label for="nome">Nome do Brinquedo</label>
+      <input type="text" id="nome" th:field="*{nome}" required>
+    </div>
+
+    <div class="input-box">
+      <label for="descricao">Descrição do Brinquedo</label>
+      <textarea id="descricao" th:field="*{descricao}" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Salvar</button>
+    <a href="/brinquedos" class="cancel-btn">Cancelar</a>
+  </form>
+</section>
+
+</body>
+</html>

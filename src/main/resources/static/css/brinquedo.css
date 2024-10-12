@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+.toy-register-section {
+    background-color: #f0f4f5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.form-title {
+    font-size: 24px;
+    color: #2c5364;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-box label {
+    font-size: 14px;
+    color: #2c5364;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #3a6073;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #48a9a6;
+    background-color: #eef7f8;
+}
+
+.submit-btn {
+    background-color: #3a6073;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #48a9a6;
+}
+
+.register-status {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ff4d4d;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

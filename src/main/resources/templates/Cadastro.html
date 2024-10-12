@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/cadastro.js" defer></script>
+</head>
+<body>
+<section>
+    <form id="signupForm">
+        <h1>Cadastre-se</h1>
+
+        <div id="message" style="color: red;"></div>
+
+        <div class="inputbox">
+            <ion-icon name="person-outline"></ion-icon>
+            <input type="text" id="nome" name="nome" required>
+            <label for="nome">Nome</label>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="senha" name="senha" required>
+            <label for="senha">Senha</label>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="passwordcon" name="passwordcon" required>
+            <label for="passwordcon">Confirmar Senha</label>
+        </div>
+        <button id="submit" type="submit">Cadastre</button>
+        <div class="register">
+            <p>Já tem uma conta? faça o <a href="/req/login">Log In</a></p>
+        </div>
+    </form>
+</section>
+
+<div class="modal" id="modalCadastro">
+    <div class="modal-content">
+        <h2 id="modalMessage"></h2>
+        <button id="modalOkButton">OK</button>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+    const submitButton = document.getElementById("submit");
+    const modal = document.getElementById("modalCadastro");
+    const modalMessage = document.getElementById("modalMessage");
+    const modalOkButton = document.getElementById("modalOkButton");
+    const messageDiv = document.getElementById('message');
+
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const senha = document.getElementById('senha').value.trim();
+        const confirmPassword = document.getElementById('passwordcon').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        if (!nome || !email || !senha || !confirmPassword) {
+            messageDiv.textContent = 'Todos os campos são obrigatórios.';
+            messageDiv.style.color = 'red';
+            return;  // Não prossegue com o envio
+        }
+
+        if (senha !== confirmPassword) {
+            messageDiv.textContent = 'As senhas não coincidem.';
+            messageDiv.style.color = 'red';
+            return;  // Não prossegue com o envio
+        }
+
+        const data = {
+            nome,
+            email,
+            senha
+        };
+
+        const jsonData = JSON.stringify(data);
+
+        fetch('/req/cadastro', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Cadastro realizado com sucesso
+                modalMessage.textContent = `Cadastro realizado com sucesso, ${nome}!`;
+                modal.style.display = 'flex';  // Exibe o modal
+            } else {
+                // Erro no cadastro
+                messageDiv.textContent = 'Erro ao realizar o cadastro.';
+                messageDiv.style.color = 'red';
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            messageDiv.textContent = 'Erro ao enviar os dados.';
+            messageDiv.style.color = 'red';
+        });
+    });
+
+    modalOkButton.addEventListener('click', () => {
+        window.location.href = '/req/login';
+    });
+</script>

@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+  --primary-color: rgba(255, 255, 255, 0.85);
+  --secondary-color: rgba(255, 255, 255, 0.6);
+  --hover-color: rgba(255, 255, 255, 0.4);
+  --text-color: #f0f0f0;
+  --border-radius: 15px;
+  --background-color: rgba(0, 0, 0, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+    background-image: url(https://img.freepik.com/fotos-gratis/paisagem-de-floresta-de-nuvens-durante-a-tempestade_23-2151794670.jpg?t=st=1728678583~exp=1728682183~hmac=9004e111779024c46e40edeef137ec57089b2ff3e65b75cf785ccab508a0a98e&w=1800);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+  overflow: hidden;
+}
+
+section {
+  position: relative;
+  max-width: 420px;
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  animation: slideIn 0.8s ease-out;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.inputbox {
+  position: relative;
+  margin: 25px 0;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.inputbox input {
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 40px 0 10px;
+  color: var(--text-color);
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 10px;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  top: 13px;
+  transition: color 0.4s ease;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -10px;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.03);
+}
+
+.register {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+.register p a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register p a:hover {
+  color: var(--secondary-color);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  color: #fff;
+  animation: zoomIn 0.5s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.modal-content button {
+  width: auto;
+  padding: 0.6rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
