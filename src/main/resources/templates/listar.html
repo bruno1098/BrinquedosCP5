@@ -6,11 +6,17 @@
     <link rel="stylesheet" th:href="@{/css/listar.css}">
 </head>
 <body>
+
+<div class="home-button">
+    <a href="/index">Home</a>
+</div>
+
 <h1>Lista de Brinquedos</h1>
 
 <div class="container-link">
     <a href="/brinquedos/novo">Adicionar Novo Brinquedo</a>
 </div>
+
 
 <ul>
     <li th:each="brinquedo : ${brinquedos}">
