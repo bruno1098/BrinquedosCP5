@@ -71,7 +71,6 @@ public class BrinquedoController {
     }
 
 
-
     @PostMapping("/deletar")
     public String deletarBrinquedo(@RequestParam("id") Long id) {
         Brinquedo brinquedo = brinquedoRepository.findById(id)
