@@ -79,13 +79,14 @@ O modelo de dados **Brinquedo** está associado à tabela `brinquedos` e armazen
 
 | Tecnologia | Descrição |
 |------------|-----------|
-| <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white"/> | Linguagem de programação utilizada no projeto. |
-| <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> | Framework utilizado para construir a aplicação. |
-| <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white"/> | Banco de dados utilizado para armazenar os dados. |
-| <img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=flat-square&logo=thymeleaf&logoColor=white"/> | Template engine para renderizar páginas HTML. |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30"/> Java | Linguagem de programação utilizada no projeto. |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="30"/> Spring Boot | Framework utilizado para construir a aplicação. |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="30"/> PostgreSQL | Banco de dados utilizado para armazenar os dados. |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="30"/> Docker | Ferramenta de contêinerização para facilitar o deploy. |
 | <img src="https://img.shields.io/badge/Lombok-55A3F1?style=flat-square&logo=java&logoColor=white"/> | Biblioteca para reduzir código boilerplate no Java. |
-| <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> | Ferramenta de contêinerização para facilitar o deploy. |
-| <img src="https://img.shields.io/badge/Render-0468D7?style=flat-square&logo=render&logoColor=white"/> | Plataforma utilizada para deploy da aplicação. |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" width="30"/> IntelliJ IDEA | IDE utilizada para o desenvolvimento do projeto. |
+
+
 
 ## 🔧 Configurações
 
