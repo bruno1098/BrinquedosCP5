@@ -23,12 +23,15 @@
         <h2 th:text="${brinquedo.nome}">Nome do Brinquedo</h2>
         <p th:text="${brinquedo.descricao}">Descrição do Brinquedo</p>
         <div>
-            <button th:href="@{/brinquedos/editar/{id}(id=${brinquedo.id})}">Editar</button>
+            <form th:action="@{/brinquedos/editar/{id}(id=${brinquedo.id})}" method="get" style="display:inline;">
+                <button type="submit">Editar</button>
+            </form>
 
             <form th:action="@{/brinquedos/deletar}" method="post" style="display:inline;">
                 <input type="hidden" th:name="id" th:value="${brinquedo.id}"/>
                 <button type="submit">Excluir</button>
             </form>
+
         </div>
     </li>
 </ul>
